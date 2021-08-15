@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     public Rigidbody2D rb;
+    public GameObject sprite;
     
 
     [Header("Variables")]
@@ -13,12 +14,14 @@ public class PlayerController : MonoBehaviour
     public float movespeed;
     public bool isHiding; //is true, if the player is current haunting an object
     public bool canHaunt; //is true, if the player is near a hauntable object
+    public float xScale;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         isHiding = false;
         canHaunt = false;
+        xScale = sprite.transform.localScale.x;
     }
 
     
@@ -43,5 +46,26 @@ public class PlayerController : MonoBehaviour
     public void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * movespeed * Time.deltaTime);
+
+        Flip();
+    }
+
+
+    public void Flip()
+    {
+        if (movement.x < 0)
+        {
+            if (sprite.transform.localScale.x != xScale)
+            {
+                sprite.transform.localScale = new Vector3(xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+            }
+        }
+        else if (movement.x > 0)
+        {
+            if (sprite.transform.localScale.x != -xScale)
+            {
+                sprite.transform.localScale = new Vector3(-xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+            }
+        }
     }
 }
