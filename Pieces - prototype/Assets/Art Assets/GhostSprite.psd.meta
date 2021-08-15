@@ -1,58 +1,49 @@
 fileFormatVersion: 2
-guid: 2b3ca002a35c7b24e82d0cf2e4106ef8
+guid: 057f3ef997bf98641897a33bdf22f498
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8020143640844766479
-    second: spritesheet_0
+      213: 2610438469569871844
+    second: GhostSprite_0
   - first:
-      213: -6251682230944352461
-    second: spritesheet_1
+      213: -2305753010262190244
+    second: GhostSprite_1
   - first:
-      213: -1259408508766424310
-    second: spritesheet_2
+      213: 6430817303143843961
+    second: GhostSprite_2
   - first:
-      213: -5962389079421231736
-    second: spritesheet_3
+      213: -2628239942800224789
+    second: GhostSprite_3
   - first:
-      213: 2788568348960109317
-    second: spritesheet_4
+      213: 4747677571267086402
+    second: GhostSprite_4
   - first:
-      213: 226702753830753226
-    second: spritesheet_5
+      213: 5993467475489140705
+    second: GhostSprite_5
   - first:
-      213: -7921052967969465774
-    second: spritesheet_6
+      213: 6014521708070939935
+    second: GhostSprite_6
   - first:
-      213: -1370661682523340017
-    second: spritesheet_7
+      213: 516020355462380575
+    second: GhostSprite_7
   - first:
-      213: -8276262488406422588
-    second: spritesheet_8
+      213: 4125968835689497043
+    second: GhostSprite_8
   - first:
-      213: -5906973516983679737
-    second: spritesheet_9
+      213: 2230956347961207142
+    second: GhostSprite_9
   - first:
-      213: 5777552420452043588
-    second: spritesheet_10
+      213: -8660400659231973352
+    second: GhostSprite_10
   - first:
-      213: 1269540525142108225
-    second: spritesheet_11
+      213: -7197454272556755574
+    second: GhostSprite_11
   - first:
-      213: -2630129836624287915
-    second: spritesheet_12
+      213: 8316901189824604524
+    second: GhostSprite_12
   - first:
-      213: -7676219313036738927
-    second: spritesheet_13
-  - first:
-      213: 6985626698306143173
-    second: spritesheet_14
-  - first:
-      213: 4773514653529381359
-    second: spritesheet_15
-  - first:
-      213: 6413020478584453356
-    second: spritesheet_16
+      213: -8285749711476316315
+    second: GhostSprite_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,34 +133,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_11
+      name: GhostSprite_0
       rect:
         serializedVersion: 2
-        x: 581
-        y: 58
-        width: 229
-        height: 416
+        x: 27
+        y: 199
+        width: 151
+        height: 247
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148ee0d91605e9110800000000000000
-      internalID: 1269540525142108225
+      spriteID: 4eff9b615f32a3420800000000000000
+      internalID: 2610438469569871844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_12
+      name: GhostSprite_2
       rect:
         serializedVersion: 2
-        x: 871
-        y: 67
-        width: 237
-        height: 407
+        x: 245
+        y: 194
+        width: 150
+        height: 258
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5576ade39d6ef7bd0800000000000000
-      internalID: -2630129836624287915
+      spriteID: 9780359e34ade3950800000000000000
+      internalID: 6430817303143843961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_14
+      name: GhostSprite_4
       rect:
         serializedVersion: 2
-        x: 1158
-        y: 73
-        width: 234
-        height: 402
+        x: 467
+        y: 177
+        width: 151
+        height: 275
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c3c50e787ee1f060800000000000000
-      internalID: 6985626698306143173
+      spriteID: 248c677c89323e140800000000000000
+      internalID: 4747677571267086402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_15
+      name: GhostSprite_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 70
-        width: 242
-        height: 395
+        x: 679
+        y: 188
+        width: 151
+        height: 264
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe99db5494eee3240800000000000000
-      internalID: 4773514653529381359
+      spriteID: f1da17f80afd77350800000000000000
+      internalID: 6014521708070939935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_16
+      name: GhostSprite_8
       rect:
         serializedVersion: 2
-        x: 294
-        y: 62
-        width: 228
-        height: 410
+        x: 890
+        y: 199
+        width: 150
+        height: 252
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +231,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce8f45bc520aff850800000000000000
-      internalID: 6413020478584453356
+      spriteID: 3d1ca95bbc2624930800000000000000
+      internalID: 4125968835689497043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostSprite_10
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 194
+        width: 150
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8106be53c7310d780800000000000000
+      internalID: -8660400659231973352
       vertices: []
       indices: 
       edges: []
