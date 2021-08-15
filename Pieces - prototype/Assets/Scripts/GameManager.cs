@@ -17,6 +17,16 @@ public class GameManager : MonoBehaviour
             currentVessel.GetComponent<PlayerController>().isCurrentVessel = false;
             currentVessel = null;
         }
+
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (currentVessel != null)
+            {
+                Depossess();
+            }
+        }
     }
 
     public void Possess(GameObject host)
@@ -39,7 +49,14 @@ public class GameManager : MonoBehaviour
     public void Depossess()
     {
 
+        ghost.GetComponent<PlayerController>().isActive = true;
+        ghost.GetComponent<PlayerController>().isPossessing = false;
+        ghost.GetComponent<PlayerController>().sprite.SetActive(true);
+
+
+
         currentVessel.GetComponent<PlayerController>().isCurrentVessel = false;
+        Destroy(currentVessel.gameObject);
         currentVessel = null;
     }
 
