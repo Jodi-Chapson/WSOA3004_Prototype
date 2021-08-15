@@ -4,42 +4,66 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum CreatureType {GHOST, RAT, CROW}
+
     [Header("References")]
     public Rigidbody2D rb;
     public GameObject sprite;
-    
+
+    [Header("Player Configurations")]
+    public bool isVessel;
+    public CreatureType type;
+
+    [Header("States")]
+    public bool isGrounded;   
+    public bool isCurrentVessel;
+    public bool isActive;
 
     [Header("Variables")]
     public Vector2 movement;
     public float movespeed;
-    public bool isHiding; //is true, if the player is current haunting an object
-    public bool canHaunt; //is true, if the player is near a hauntable object
     public float xScale;
+    
+
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        isHiding = false;
-        canHaunt = false;
+        
         xScale = sprite.transform.localScale.x;
+        isGrounded = false;
+
+
+        if (isVessel)
+        {
+            isActive = false;
+        }
+        else
+        {
+            isActive = true;
+        }
     }
 
     
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-
-        //press this when near an object to haunt it, will configure more bools later to influence this ability.
-        if (Input.GetKeyDown("e"))
+        if (isActive)
         {
-            Debug.Log("hiding");
-            if(canHaunt && !isHiding)
-            {
-                //let the player haunt
-                
-                isHiding = true;
-            }
+            movement.x = Input.GetAxisRaw("Horizontal");
         }
+
+
+
+        if (isGrounded)
+        {
+            movement.y = 0;
+        }
+        else
+        {
+            movement.y = -0.5f;
+        }
+
+        
         
     }
 

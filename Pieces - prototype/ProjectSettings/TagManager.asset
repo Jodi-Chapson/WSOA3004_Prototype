@@ -12,6 +12,7 @@ TagManager:
   - Interactable
   - Grate
   - HeartPiece
+  - Groundcheck
   layers:
   - Default
   - TransparentFX
