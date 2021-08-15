@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
         if (isVessel && !isCurrentVessel)
         {
             float distance = Vector2.Distance(manager.GetComponent<GameManager>().ghost.transform.position, this.transform.position);
-            if (distance < 3)
+            if (distance < 5)
             {
                 manager.Possess(this.gameObject);
             }

@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentVessel.gameObject);
             currentVessel = null;
+
+            
         }
 
 
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
             ghost.GetComponent<PlayerController>().isActive = false;
             ghost.GetComponent<PlayerController>().isPossessing = true;
             ghost.GetComponent<PlayerController>().sprite.SetActive(false);
+        ghost.GetComponent<Rigidbody2D>().gravityScale = 0;
 
 
 
@@ -69,7 +72,8 @@ public class GameManager : MonoBehaviour
         ghost.GetComponent<PlayerController>().isActive = true;
         ghost.GetComponent<PlayerController>().isPossessing = false;
         ghost.GetComponent<PlayerController>().sprite.SetActive(true);
-        
+        ghost.GetComponent<Rigidbody2D>().gravityScale = 1;
+
 
 
 
