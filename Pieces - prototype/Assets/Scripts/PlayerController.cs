@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public enum CreatureType { GHOST, RAT, CROW }
+    public enum CreatureType {GHOST, RAT, CROW}
 
     [Header("References")]
     public Rigidbody2D rb;
     public GameObject sprite;
-    public GameManager manager;
 
     [Header("Player Configurations")]
     public bool isVessel;
     public CreatureType type;
 
     [Header("States")]
-    public bool isGrounded;
+    public bool isGrounded;   
     public bool isCurrentVessel;
     public bool isActive;
 
@@ -24,15 +23,13 @@ public class PlayerController : MonoBehaviour
     public Vector2 movement;
     public float movespeed;
     public float xScale;
-
+    
 
 
     void Start()
     {
-        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        
         rb = this.GetComponent<Rigidbody2D>();
-
+        
         xScale = sprite.transform.localScale.x;
         isGrounded = false;
 
@@ -47,7 +44,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    
     void Update()
     {
         if (isActive)
@@ -66,8 +63,8 @@ public class PlayerController : MonoBehaviour
             movement.y = -0.5f;
         }
 
-
-
+        
+        
     }
 
     public void FixedUpdate()
@@ -94,21 +91,5 @@ public class PlayerController : MonoBehaviour
                 sprite.transform.localScale = new Vector3(-xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
             }
         }
-    }
-
-
-    public void OnMouseDown()
-    {
-        if (isVessel && !isCurrentVessel)
-        {
-            Debug.Log("possessed");
-            
-
-            manager.Possess(this.gameObject);
-
-
-        }
-
-
     }
 }
