@@ -16,12 +16,16 @@ public class GameManager : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown ("escape"))
         {
-            currentVessel.GetComponent<PlayerController>().isCurrentVessel = false;
-            currentVessel = null;
+            Debug.Log("close game");
+            this.GetComponent<SceneChanger>().Exit();
         }
 
+        if (Input.GetKeyDown("r"))
+        {
+            this.GetComponent<SceneChanger>().Scenechanger(1);
+        }
 
 
         if (Input.GetMouseButtonDown(1))
