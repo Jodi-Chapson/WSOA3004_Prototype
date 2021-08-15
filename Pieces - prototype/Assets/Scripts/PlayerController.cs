@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public bool isCurrentVessel;
     public bool isActive;
+    public bool isPossessing;
 
     [Header("Variables")]
     public Vector2 movement;
@@ -53,9 +54,12 @@ public class PlayerController : MonoBehaviour
         if (isActive)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
+                     
         }
-
-
+        else if (isPossessing)
+        {
+            this.transform.position = manager.currentVessel.transform.position;
+        }
 
         if (isGrounded)
         {
@@ -65,6 +69,10 @@ public class PlayerController : MonoBehaviour
         {
             movement.y = -0.5f;
         }
+
+
+
+
 
 
 
@@ -101,12 +109,12 @@ public class PlayerController : MonoBehaviour
     {
         if (isVessel && !isCurrentVessel)
         {
-            Debug.Log("possessed");
+            float distance = Vector2.Distance(manager.GetComponent<GameManager>().ghost.transform.position, this.transform.position);
+            if (distance < 3)
+            {
+                manager.Possess(this.gameObject);
+            }
             
-
-            manager.Possess(this.gameObject);
-
-
         }
 
 

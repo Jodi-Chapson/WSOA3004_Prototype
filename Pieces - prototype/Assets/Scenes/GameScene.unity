@@ -149,8 +149,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37538100}
   m_LocalRotation: {x: -0, y: -0, z: -0.022029717, w: 0.99975735}
-  m_LocalPosition: {x: -0.02, y: 1.11, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalPosition: {x: -0.01, y: 1.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475488458}
   m_RootOrder: 1
@@ -1379,7 +1379,7 @@ Transform:
   m_GameObject: {fileID: 475488456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.06, y: -0.13, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 907258184}
   - {fileID: 37538101}
@@ -1407,6 +1407,7 @@ MonoBehaviour:
   isGrounded: 0
   isCurrentVessel: 0
   isActive: 0
+  isPossessing: 0
   movement: {x: 0, y: 0}
   movespeed: 5
   xScale: 0
@@ -1423,8 +1424,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.1346501}
-  m_Size: {x: 1.25, y: 2.1506996}
+  m_Offset: {x: 0, y: 1.3658512}
+  m_Size: {x: 1.25, y: 2.3889384}
   m_Direction: 0
 --- !u!50 &475488461
 Rigidbody2D:
@@ -1757,7 +1758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849635392
 GameObject:
@@ -2050,6 +2051,7 @@ MonoBehaviour:
   isGrounded: 0
   isCurrentVessel: 0
   isActive: 0
+  isPossessing: 0
   movement: {x: 0, y: 0}
   movespeed: 6
   xScale: 0
@@ -2957,8 +2959,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600244655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0483, y: 0.6774, z: 0}
-  m_LocalScale: {x: 1.0935875, y: 1.0510052, z: 0.93586}
+  m_LocalPosition: {x: 0.205, y: 0.262, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1213447263}
   m_RootOrder: 0
@@ -3832,5 +3834,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

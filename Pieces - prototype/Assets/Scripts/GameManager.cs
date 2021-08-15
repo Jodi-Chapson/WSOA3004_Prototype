@@ -21,8 +21,10 @@ public class GameManager : MonoBehaviour
 
     public void Possess(GameObject host)
     {
-        //toggles the ghosts features
-
+        //turns off ghost movement, and turns off sprite
+        ghost.GetComponent<PlayerController>().isActive = false;
+        ghost.GetComponent<PlayerController>().isPossessing = true;
+        ghost.GetComponent<PlayerController>().sprite.SetActive(false);
 
 
 
