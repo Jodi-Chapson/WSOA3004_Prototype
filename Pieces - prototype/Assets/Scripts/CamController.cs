@@ -5,11 +5,12 @@ using UnityEngine;
 public class CamController : MonoBehaviour
 {
     [Header("References")]
-    public Transform player;
+    
     public float Lerp;
     public Vector3 CamPos;
     public float CamY;
     public bool CamFollow;
+    public GameObject target;
 
 
     private void Start()
@@ -23,7 +24,7 @@ public class CamController : MonoBehaviour
     {
         if (CamFollow)
         {
-            CamPos = Vector3.Lerp(CamPos, player.position, Lerp);
+            CamPos = Vector3.Lerp(CamPos, target.transform.position, Lerp);
             CamPos = new Vector3(CamPos.x, CamPos.y + CamY, -15);
             transform.position = CamPos;
         }

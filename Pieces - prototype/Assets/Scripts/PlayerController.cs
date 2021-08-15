@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
 
     [Header("Variables")]
-    public Vector2 movement;
+    
     public float movespeed;
+    public float jump;
     
     public float xScale;
     
@@ -52,55 +53,124 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void Update()
+    public void Update()
     {
         if (isActive)
         {
-            movement.x = Input.GetAxisRaw("Horizontal");
+            if (isGrounded && type == CreatureType.RAT)
+            {
 
-            
+                if (Input.GetKeyDown("w"))
+                {
+
+
+                    rb.velocity = new Vector2(rb.velocity.x, jump);
+
+
+
+
+
+
+                }
+            }
+            else if (type == CreatureType.CROW)
+            {
+                if (Input.GetKey("w"))
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jump);
+                    
+                }
+                else if (Input.GetKey("s"))
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, -jump);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, 0);
+                }
+            }
+        }
+    }
+
+
+    public void FixedUpdate()
+    {
+
+        if (isActive)
+        {
+            if (Input.GetKey("a"))
+            {
+                rb.velocity = new Vector2(-movespeed, rb.velocity.y);
+                Flip();
+            }
+            else if (Input.GetKey("d"))
+            {
+                rb.velocity = new Vector2(movespeed, rb.velocity.y);
+                Flip();
+
+            }
+            else
+            {
+
+
+                rb.velocity = new Vector2(0, rb.velocity.y);
+
+
+
+            }
+
+
 
         }
         else if (isPossessing)
         {
             this.transform.position = manager.currentVessel.transform.position;
         }
-
-
         
-
-        
-
-
-
-
-
-
-
     }
 
-    public void FixedUpdate()
-    {
-        rb.velocity = new Vector2(movement.x * movespeed, rb.velocity.y);
-
-        Flip();
-    }
 
 
     public void Flip()
     {
-        if (movement.x < 0)
+        if (rb.velocity.x < 0)
         {
-            if (sprite.transform.localScale.x != xScale)
+            if (type != CreatureType.CROW)
             {
-                sprite.transform.localScale = new Vector3(xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+
+
+
+
+                if (sprite.transform.localScale.x != xScale)
+                {
+                    sprite.transform.localScale = new Vector3(xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+                }
+            }
+            else
+            {
+                if (sprite.transform.localScale.x != -xScale)
+                {
+                    sprite.transform.localScale = new Vector3(-xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+                }
             }
         }
-        else if (movement.x > 0)
+        else if (rb.velocity.x > 0)
         {
-            if (sprite.transform.localScale.x != -xScale)
+            if (type != CreatureType.CROW)
             {
-                sprite.transform.localScale = new Vector3(-xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+
+
+                if (sprite.transform.localScale.x != -xScale)
+                {
+                    sprite.transform.localScale = new Vector3(-xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+                }
+            }
+            else
+            {
+                if (sprite.transform.localScale.x != xScale)
+                {
+                    sprite.transform.localScale = new Vector3(xScale, sprite.transform.localScale.y, sprite.transform.localScale.z);
+                }
             }
         }
     }

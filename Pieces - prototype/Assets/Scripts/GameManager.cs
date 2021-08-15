@@ -6,8 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public GameObject ghost;
     public GameObject currentVessel;
+    public CamController cam;
 
-
+    public void Start()
+    {
+        cam.target = ghost;
+    }
     public void Update()
     {
         
@@ -31,28 +35,41 @@ public class GameManager : MonoBehaviour
 
     public void Possess(GameObject host)
     {
-        //turns off ghost movement, and turns off sprite
-        ghost.GetComponent<PlayerController>().isActive = false;
-        ghost.GetComponent<PlayerController>().isPossessing = true;
-        ghost.GetComponent<PlayerController>().sprite.SetActive(false);
+        if (currentVessel != null)
+        {
+            Destroy(currentVessel.gameObject);
+            currentVessel = null;
+        }
+
+
+            //turns off ghost movement, and turns off sprite
+            ghost.GetComponent<PlayerController>().isActive = false;
+            ghost.GetComponent<PlayerController>().isPossessing = true;
+            ghost.GetComponent<PlayerController>().sprite.SetActive(false);
 
 
 
-        //switches on the host
-        currentVessel = host;
-        host.GetComponent<PlayerController>().isCurrentVessel = true;
-        host.GetComponent<PlayerController>().isActive = true;
-        host.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
+
+            //switches on the host
+            currentVessel = host;
+            cam.target = host;
+            host.GetComponent<PlayerController>().isCurrentVessel = true;
+            host.GetComponent<PlayerController>().isActive = true;
+            host.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
+
+        
 
 
     }
 
     public void Depossess()
     {
-
+        cam.target = ghost;
+        ghost.transform.position = currentVessel.transform.position;
         ghost.GetComponent<PlayerController>().isActive = true;
         ghost.GetComponent<PlayerController>().isPossessing = false;
         ghost.GetComponent<PlayerController>().sprite.SetActive(true);
+        
 
 
 
