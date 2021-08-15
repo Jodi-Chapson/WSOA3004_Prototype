@@ -13,7 +13,7 @@ public class Groundcheck : MonoBehaviour
         
         
         
-            player = GetComponentInParent<PlayerController>();
+        player = GetComponentInParent<PlayerController>();
 
         
         
@@ -31,16 +31,5 @@ public class Groundcheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
-            
-            
-            {
-                player.isGrounded = false;
-
-            }
-        }
-    }
+  
 }

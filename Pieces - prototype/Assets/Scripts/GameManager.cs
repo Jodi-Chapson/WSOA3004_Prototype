@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         currentVessel = host;
         host.GetComponent<PlayerController>().isCurrentVessel = true;
         host.GetComponent<PlayerController>().isActive = true;
+        host.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
 
 
     }

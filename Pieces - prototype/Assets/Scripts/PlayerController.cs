@@ -16,15 +16,18 @@ public class PlayerController : MonoBehaviour
     public CreatureType type;
 
     [Header("States")]
-    public bool isGrounded;
+    
     public bool isCurrentVessel;
     public bool isActive;
     public bool isPossessing;
+    public bool isGrounded;
 
     [Header("Variables")]
     public Vector2 movement;
     public float movespeed;
+    
     public float xScale;
+    
 
 
 
@@ -35,7 +38,7 @@ public class PlayerController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
 
         xScale = sprite.transform.localScale.x;
-        isGrounded = false;
+        
 
 
         if (isVessel)
@@ -54,21 +57,19 @@ public class PlayerController : MonoBehaviour
         if (isActive)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
-                     
+
+            
+
         }
         else if (isPossessing)
         {
             this.transform.position = manager.currentVessel.transform.position;
         }
 
-        if (isGrounded)
-        {
-            movement.y = 0;
-        }
-        else
-        {
-            movement.y = -0.5f;
-        }
+
+        
+
+        
 
 
 
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * movespeed * Time.deltaTime);
+        rb.velocity = new Vector2(movement.x * movespeed, rb.velocity.y);
 
         Flip();
     }
@@ -118,5 +119,14 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+
+        }
     }
 }
