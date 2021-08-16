@@ -5,6 +5,7 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     public GameManager manager;
+    public GameObject memorytext, endscreen;
 
     public void Start()
     {
@@ -14,8 +15,18 @@ public class Heart : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("win");
-            Destroy(this.gameObject);
+
+            this.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            memorytext.SetActive(true);
+            StartCoroutine(End());
+
         }
+    }
+
+    public IEnumerator End()
+    {
+        yield return new WaitForSeconds(3f);
+
+        endscreen.SetActive(true);
     }
 }
