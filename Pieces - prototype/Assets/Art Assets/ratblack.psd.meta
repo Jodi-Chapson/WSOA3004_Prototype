@@ -6,20 +6,20 @@ TextureImporter:
       213: 1762951926865450466
     second: ratblack_0
   - first:
+      213: 1502671094203122404
+    second: ratblack_1
+  - first:
       213: 7665977836557609086
     second: ratblack_2
+  - first:
+      213: -736514694739011953
+    second: ratblack_3
   - first:
       213: 453469544071707850
     second: ratblack_5
   - first:
-      213: -4903692943431241999
-    second: ratblack_11
-  - first:
-      213: -2879112387455227472
-    second: ratblack_12
-  - first:
-      213: 4917863877974804360
-    second: ratblack_13
+      213: 8821964114575852082
+    second: ratblack_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,10 +112,10 @@ TextureImporter:
       name: ratblack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 187
-        width: 222
-        height: 90
+        x: 52
+        y: 202
+        width: 201
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,13 +130,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: ratblack_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 200
+        width: 220
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e28930166f8ad410800000000000000
+      internalID: 1502671094203122404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: ratblack_2
       rect:
         serializedVersion: 2
-        x: 227
-        y: 193
-        width: 220
-        height: 61
+        x: 506
+        y: 200
+        width: 213
+        height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,13 +172,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: ratblack_3
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 202
+        width: 192
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86d93099cf57c5f0800000000000000
+      internalID: -736514694739011953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: ratblack_5
       rect:
         serializedVersion: 2
-        x: 470
-        y: 192
-        width: 223
-        height: 78
+        x: 965
+        y: 203
+        width: 200
+        height: 81
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,69 +209,6 @@ TextureImporter:
       bones: []
       spriteID: acc3ad2d52c0b4600800000000000000
       internalID: 453469544071707850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ratblack_11
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 204
-        width: 229
-        height: 83
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1fee033bf3592fbb0800000000000000
-      internalID: -4903692943431241999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ratblack_12
-      rect:
-        serializedVersion: 2
-        x: 932
-        y: 202
-        width: 230
-        height: 104
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b9ed4da9865b08d0800000000000000
-      internalID: -2879112387455227472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ratblack_13
-      rect:
-        serializedVersion: 2
-        x: 1160
-        y: 189
-        width: 222
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 887c96c1423cf3440800000000000000
-      internalID: 4917863877974804360
       vertices: []
       indices: 
       edges: []

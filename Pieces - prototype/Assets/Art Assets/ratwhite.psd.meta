@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 801cbc9aea14c4c4f8b3e76d1e547f19
+guid: 3486fd908c1c55f46965d9a59f79901b
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4182341016325636491
     second: ratwhite_0
   - first:
+      213: 4271540923168691305
+    second: ratwhite_1
+  - first:
       213: -1886808289041718148
     second: ratwhite_2
+  - first:
+      213: 5250103367692630970
+    second: ratwhite_3
   - first:
       213: 2445813748685210754
     second: ratwhite_5
   - first:
-      213: -7964493728217088444
-    second: ratwhite_11
-  - first:
-      213: -2983898802281478141
-    second: ratwhite_12
-  - first:
-      213: -8115037758377825218
-    second: ratwhite_13
+      213: -6041206266556746880
+    second: ratwhite_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,12 +112,12 @@ TextureImporter:
       name: ratwhite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 190
-        width: 222
-        height: 89
+        x: 40
+        y: 202
+        width: 201
+        height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,15 +130,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: ratwhite_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 200
+        width: 215
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964930986df874b30800000000000000
+      internalID: 4271540923168691305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: ratwhite_2
       rect:
         serializedVersion: 2
-        x: 226
-        y: 193
-        width: 220
-        height: 81
+        x: 459
+        y: 215
+        width: 213
+        height: 87
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,15 +172,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: ratwhite_3
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 202
+        width: 227
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbb669523d1cd840800000000000000
+      internalID: 5250103367692630970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: ratwhite_5
       rect:
         serializedVersion: 2
-        x: 470
-        y: 194
-        width: 220
-        height: 108
+        x: 897
+        y: 202
+        width: 211
+        height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,69 +209,6 @@ TextureImporter:
       bones: []
       spriteID: 284062d55a641f120800000000000000
       internalID: 2445813748685210754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ratwhite_11
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 209
-        width: 229
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44e3bc1e62f687190800000000000000
-      internalID: -7964493728217088444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ratwhite_12
-      rect:
-        serializedVersion: 2
-        x: 933
-        y: 210
-        width: 230
-        height: 194
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3088c4449df0796d0800000000000000
-      internalID: -2983898802281478141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ratwhite_13
-      rect:
-        serializedVersion: 2
-        x: 1156
-        y: 192
-        width: 226
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3ce1017728916f80800000000000000
-      internalID: -8115037758377825218
       vertices: []
       indices: 
       edges: []
