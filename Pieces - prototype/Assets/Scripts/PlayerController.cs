@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rb.velocity.x < 0)
         {
-            if (type != CreatureType.CROW)
+            if (type != CreatureType.CROW && type != CreatureType.RAT)
             {
 
 
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (rb.velocity.x > 0)
         {
-            if (type != CreatureType.CROW)
+            if (type != CreatureType.CROW && type != CreatureType.RAT)
             {
 
 
