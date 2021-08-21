@@ -102,11 +102,20 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(-movespeed, rb.velocity.y);
                 Flip();
+
+                if (type == CreatureType.GHOST)
+                {
+                    this.GetComponentInChildren<SpriteRenderer>().gameObject.transform.localRotation = Quaternion.Euler(0, 0, 3);
+                }
             }
             else if (Input.GetKey("d"))
             {
                 rb.velocity = new Vector2(movespeed, rb.velocity.y);
                 Flip();
+                if (type == CreatureType.GHOST)
+                {
+                    this.GetComponentInChildren<SpriteRenderer>().gameObject.transform.localRotation = Quaternion.Euler(0, 0, -9);
+                }
 
             }
             else
@@ -115,7 +124,10 @@ public class PlayerController : MonoBehaviour
 
                 rb.velocity = new Vector2(0, rb.velocity.y);
 
-
+                if (type == CreatureType.GHOST)
+                {
+                   this.GetComponentInChildren<SpriteRenderer>().gameObject.transform.localRotation = Quaternion.Euler(0, 0, -3);
+                }
 
             }
 
