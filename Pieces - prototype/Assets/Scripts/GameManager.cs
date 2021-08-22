@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         ghost.GetComponentInChildren<Animator>().SetBool("isBall", true);
         ghost.GetComponent<Rigidbody2D>().gravityScale = 0;
         ghost.GetComponent<CapsuleCollider2D>().enabled = false;
+        ghost.GetComponentInChildren<ParticleSystem>().Stop();
 
 
 
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
             host.GetComponent<PlayerController>().isCurrentVessel = true;
             host.GetComponent<PlayerController>().isActive = true;
             host.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
+        host.GetComponentInChildren<ParticleSystem>().Play();
 
         
 
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour
 
         ghost.GetComponent<Rigidbody2D>().gravityScale = 1;
         ghost.GetComponent<CapsuleCollider2D>().enabled = true;
+        ghost.GetComponentInChildren<ParticleSystem>().Play();
 
 
 

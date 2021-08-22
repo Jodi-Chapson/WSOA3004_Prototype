@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Configurations")]
     public bool isVessel;
     public CreatureType type;
-
+    public bool hasIdle;
     [Header("States")]
     
     public bool isCurrentVessel;
@@ -66,7 +66,12 @@ public class PlayerController : MonoBehaviour
 
                     rb.velocity = new Vector2(rb.velocity.x, jump);
 
+                    if (hasIdle)
+                    {
+                        this.GetComponentInChildren<Animator>().SetBool("isMoving", true);
+                    }
 
+                    isGrounded = false;
 
 
 
@@ -92,7 +97,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    public void LateUpdate()
+    {
+        
+    }
     public void FixedUpdate()
     {
 
@@ -101,6 +109,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey("a"))
             {
                 rb.velocity = new Vector2(-movespeed, rb.velocity.y);
+
+
+                if (hasIdle)
+                {
+                    this.GetComponentInChildren<Animator>().SetBool("isMoving", true);
+                }
+
                 Flip();
 
                 if (type == CreatureType.GHOST)
@@ -111,6 +126,12 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKey("d"))
             {
                 rb.velocity = new Vector2(movespeed, rb.velocity.y);
+
+                if (hasIdle)
+                {
+                    this.GetComponentInChildren<Animator>().SetBool("isMoving", true);
+                }
+
                 Flip();
                 if (type == CreatureType.GHOST)
                 {
@@ -121,8 +142,13 @@ public class PlayerController : MonoBehaviour
             else
             {
 
-
+                
                 rb.velocity = new Vector2(0, rb.velocity.y);
+                
+                if (isGrounded && hasIdle)
+                {
+                    this.GetComponentInChildren<Animator>().SetBool("isMoving", false);
+                }
 
                 if (type == CreatureType.GHOST)
                 {
@@ -137,6 +163,14 @@ public class PlayerController : MonoBehaviour
         else if (isPossessing)
         {
             this.transform.position = manager.currentVessel.transform.position;
+        }
+        else if (isVessel)
+        {
+            if (type == CreatureType.RAT && isGrounded)
+            {
+
+                rb.velocity = Vector2.zero;
+            }
         }
         
     }

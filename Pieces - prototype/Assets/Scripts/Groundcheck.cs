@@ -31,18 +31,26 @@ public class Groundcheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
-
-
-
-            player.isGrounded = false;
-
-
+            player.isGrounded = true;
         }
     }
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Floor")
+    //    {
+
+
+
+    //        player.isGrounded = false;
+
+
+    //    }
+    //}
 
 
 }
