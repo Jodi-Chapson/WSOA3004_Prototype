@@ -102,10 +102,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void LateUpdate()
-    {
-        
-    }
+   
     public void FixedUpdate()
     {
 
@@ -163,8 +160,25 @@ public class PlayerController : MonoBehaviour
             }
 
 
+            if (type == CreatureType.RAT)
+            {
+                if (jump > 8)
+                {
+                    if (isGrounded)
+                    {
+                        rb.gravityScale = 2;
+                    }
+                    else if (!isGrounded && rb.velocity.y < 0)
+                    {
+                        rb.gravityScale = 4;
+                    }
+                }
+            }
+        
 
-        }
+
+
+    }
         else if (isPossessing)
         {
             //this.transform.position = manager.currentVessel.transform.position;
@@ -201,11 +215,15 @@ public class PlayerController : MonoBehaviour
         }
         else if (isVessel)
         {
-            if (type == CreatureType.RAT && isGrounded)
+            if (type == CreatureType.RAT)
             {
+                if (isGrounded)
+                {
+                    rb.velocity = Vector2.zero;
 
-                rb.velocity = Vector2.zero;
+                }
             }
+            
         }
         
     }
@@ -258,7 +276,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if (isVessel)
+        if (isVessel && !isCurrentVessel)
         {
             float distance = Vector2.Distance(manager.GetComponent<GameManager>().ghost.transform.position, this.transform.position);
             if (distance < 5)
