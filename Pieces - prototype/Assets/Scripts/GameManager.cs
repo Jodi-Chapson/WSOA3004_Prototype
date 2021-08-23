@@ -16,6 +16,13 @@ public class GameManager : MonoBehaviour
         cam.target = ghost;
     }
 
+
+    public void Dialogue()
+
+    {
+
+    }
+
     
 
     public void Update()
