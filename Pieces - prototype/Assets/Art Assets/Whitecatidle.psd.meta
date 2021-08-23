@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 2160295147260460643
     second: Whitecatidle_2
+  - first:
+      213: -8039608181364154314
+    second: Whitecatidle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -158,6 +161,27 @@ TextureImporter:
       bones: []
       spriteID: 36eb57e9df8eafd10800000000000000
       internalID: 2160295147260460643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Whitecatidle_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 379
+        width: 155
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630277864f29d6090800000000000000
+      internalID: -8039608181364154314
       vertices: []
       indices: 
       edges: []
