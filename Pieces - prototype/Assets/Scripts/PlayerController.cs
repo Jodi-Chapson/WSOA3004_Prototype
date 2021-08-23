@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool isPossessing;
     public bool isTransfering;
     public bool isGrounded;
+    public bool isDead;
 
     [Header("Variables")]
     
@@ -196,7 +197,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (distance < 0.05f)
                 {
-                    Debug.Log("huzzah betch");
+                    
 
 
                     this.GetComponentInChildren<TrailRenderer>().enabled = false;
@@ -220,7 +221,7 @@ public class PlayerController : MonoBehaviour
                 if (isGrounded)
                 {
                     rb.velocity = Vector2.zero;
-
+                    this.GetComponentInChildren<Animator>().SetBool("isMoving", false);
                 }
             }
             
@@ -337,5 +338,15 @@ public class PlayerController : MonoBehaviour
         {
 
         }
+    }
+
+    public void Depossessed()
+    {
+        //called when a vessel is depossessed
+
+        isCurrentVessel = false;
+        this.GetComponentInChildren<Animator>().SetBool("isPossessed", false);
+        this.GetComponentInChildren<ParticleSystem>().Stop();
+        isActive = false;
     }
 }

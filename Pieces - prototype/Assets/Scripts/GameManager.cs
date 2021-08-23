@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
     {
         if (currentVessel != null)
         {
-            Destroy(currentVessel.gameObject);
+            currentVessel.GetComponent<PlayerController>().Depossessed();
+            //Destroy(currentVessel.gameObject);
             currentVessel = null;
 
             
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
             //turns off ghost movement, and turns off sprite
             ghost.GetComponent<PlayerController>().isActive = false;
             ghost.GetComponent<PlayerController>().isPossessing = true;
-        ghost.GetComponent<PlayerController>().sprite.SetActive(true);
+        ghost.GetComponent<PlayerController>().GetComponentInChildren<SpriteRenderer>().enabled = true;
         ghost.GetComponentInChildren<Animator>().SetBool("isBall", true);
         ghost.GetComponent<Rigidbody2D>().gravityScale = 0;
         ghost.GetComponent<CapsuleCollider2D>().enabled = false;
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void CompletePossess()
     {
-        ghost.GetComponent<PlayerController>().sprite.SetActive(false);
+        ghost.GetComponent<PlayerController>().GetComponentInChildren<SpriteRenderer>().enabled =false;
         currentVessel.GetComponent<PlayerController>().isActive = true;
         currentVessel.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
         currentVessel.GetComponentInChildren<ParticleSystem>().Play();
@@ -90,20 +91,25 @@ public class GameManager : MonoBehaviour
         ghost.transform.position = currentVessel.transform.position;
         ghost.GetComponent<PlayerController>().isActive = true;
         ghost.GetComponent<PlayerController>().isPossessing = false;
-        ghost.GetComponent<PlayerController>().sprite.SetActive(true);
+        ghost.GetComponent<PlayerController>().GetComponentInChildren<SpriteRenderer>().enabled = true;
 
         ghost.GetComponentInChildren<Animator>().SetBool("isBall", false);
+        Debug.Log("nani?");
 
         ghost.GetComponent<Rigidbody2D>().gravityScale = 1;
         ghost.GetComponent<CapsuleCollider2D>().enabled = true;
         ghost.GetComponentInChildren<ParticleSystem>().Play();
 
 
-
-
-        currentVessel.GetComponent<PlayerController>().isCurrentVessel = false;
-        Destroy(currentVessel.gameObject);
+        currentVessel.GetComponent<PlayerController>().Depossessed();
         currentVessel = null;
+
+
+
+
+        //currentVessel.GetComponent<PlayerController>().isCurrentVessel = false;
+        //Destroy(currentVessel.gameObject);
+        
     }
 
     public void Teleport(int levelint)
