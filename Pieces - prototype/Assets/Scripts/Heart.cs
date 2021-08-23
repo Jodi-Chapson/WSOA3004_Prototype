@@ -13,14 +13,14 @@ public class Heart : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
+        //if (collision.gameObject.tag == "Player")
+        //{
 
-            this.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            memorytext.SetActive(true);
-            StartCoroutine(End());
+        //    this.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        //    memorytext.SetActive(true);
+        //    StartCoroutine(End());
 
-        }
+        //}
     }
 
     public IEnumerator End()

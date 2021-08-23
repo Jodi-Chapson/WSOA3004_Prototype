@@ -5,11 +5,13 @@ using UnityEngine;
 public class Cam2DFollow : MonoBehaviour
 {
 	public Transform target;
+	public Vector3 targetpos;
 	public float damping = 1;
 	public float lookAheadFactor = 3;
 	public float lookAheadReturnSpeed = 0.5f;
 	public float lookAheadMoveThreshold = 0.1f;
 	public float yPosRestriction = -1;
+	public float ymod;
 
 	float offsetZ;
 	Vector3 lastTargetPosition;
@@ -40,8 +42,11 @@ public class Cam2DFollow : MonoBehaviour
 			return;
 		}
 
+		targetpos = target.position;
+		targetpos.y = targetpos.y + ymod;
+
 		// only update lookahead pos if accelerating or changed direction
-		float xMoveDelta = (target.position - lastTargetPosition).x;
+		float xMoveDelta = (targetpos - lastTargetPosition).x;
 
 		bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
@@ -54,14 +59,15 @@ public class Cam2DFollow : MonoBehaviour
 			lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
 		}
 
-		Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward * offsetZ;
+		Vector3 aheadTargetPos = targetpos + lookAheadPos + Vector3.forward * offsetZ;
 		Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
 
 		newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y, yPosRestriction, Mathf.Infinity), -10);
+		
 
 		transform.position = newPos;
 
-		lastTargetPosition = target.position;
+		lastTargetPosition = targetpos;
 	}
 
 	void FindPlayer()
