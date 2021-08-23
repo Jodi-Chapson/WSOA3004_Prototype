@@ -31,6 +31,15 @@ public class Heart : MonoBehaviour
     {
 
 
+
+        if (manager.ghost.GetComponent<PlayerController>().isPossessing == true)
+
+        {
+
+
+            manager.Depossess();
+            Debug.Log("ugh");
+        }
         
 
         manager.Memory(memorytext, 0);

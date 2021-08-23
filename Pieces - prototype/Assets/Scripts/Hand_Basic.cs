@@ -16,6 +16,11 @@ public class Hand_Basic : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
+            if (scenechange.GetComponent<GameManager>().currentVessel != null)
+            {
+                scenechange.GetComponent<GameManager>().Depossess();
+            }
+
             scenechange.Scenechanger(scenechange.GetComponent<GameManager>().currentlevel);
             
         }

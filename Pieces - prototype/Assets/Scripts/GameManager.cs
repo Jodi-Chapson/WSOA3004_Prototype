@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public int currentlevel;
     public bool dialogueopen;
     public bool isMemory;
+    public bool isEnd;
     public int mouseclick = 0;
+    public GameObject endscreen;
     
 
     public void Start()
@@ -61,8 +63,10 @@ public class GameManager : MonoBehaviour
         currentdialogue = targetdialogue.gameObject;
 
 
-        Depossess();
-        
+        if (currentVessel != null)
+        {
+            Depossess();
+        }
 
             
             ghost.GetComponent<PlayerController>().isActive = false;
@@ -126,6 +130,11 @@ public class GameManager : MonoBehaviour
                     if (isMemory)
                     {
                         this.GetComponent<SceneChanger>().Scenechanger(currentlevel + 1);
+                    }
+
+                    if (isEnd)
+                    {
+                        endscreen.SetActive(true);
                     }
                 }
             }
