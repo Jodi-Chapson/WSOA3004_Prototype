@@ -53,11 +53,12 @@ public class GameManager : MonoBehaviour
             //turns off ghost movement, and turns off sprite
             ghost.GetComponent<PlayerController>().isActive = false;
             ghost.GetComponent<PlayerController>().isPossessing = true;
-        //ghost.GetComponent<PlayerController>().sprite.SetActive(false);
+        ghost.GetComponent<PlayerController>().sprite.SetActive(true);
         ghost.GetComponentInChildren<Animator>().SetBool("isBall", true);
         ghost.GetComponent<Rigidbody2D>().gravityScale = 0;
         ghost.GetComponent<CapsuleCollider2D>().enabled = false;
         ghost.GetComponentInChildren<ParticleSystem>().Stop();
+        ghost.GetComponent<PlayerController>().isTransfering = true;
 
 
 
@@ -66,12 +67,20 @@ public class GameManager : MonoBehaviour
             currentVessel = host;
             cam.target = host.transform;
             host.GetComponent<PlayerController>().isCurrentVessel = true;
-            host.GetComponent<PlayerController>().isActive = true;
-            host.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
-        host.GetComponentInChildren<ParticleSystem>().Play();
+            
+            
 
         
 
+
+    }
+
+    public void CompletePossess()
+    {
+        ghost.GetComponent<PlayerController>().sprite.SetActive(false);
+        currentVessel.GetComponent<PlayerController>().isActive = true;
+        currentVessel.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
+        currentVessel.GetComponentInChildren<ParticleSystem>().Play();
 
     }
 

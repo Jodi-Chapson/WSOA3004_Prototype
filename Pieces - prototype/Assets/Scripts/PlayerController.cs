@@ -20,12 +20,14 @@ public class PlayerController : MonoBehaviour
     public bool isCurrentVessel;
     public bool isActive;
     public bool isPossessing;
+    public bool isTransfering;
     public bool isGrounded;
 
     [Header("Variables")]
     
     public float movespeed;
     public float jump;
+    public float lerp;
     
     public float xScale;
     
@@ -34,11 +36,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        isTransfering = false;
         manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         
         rb = this.GetComponent<Rigidbody2D>();
 
         xScale = sprite.transform.localScale.x;
+        
         
 
 
@@ -162,7 +166,37 @@ public class PlayerController : MonoBehaviour
         }
         else if (isPossessing)
         {
-            this.transform.position = manager.currentVessel.transform.position;
+            //this.transform.position = manager.currentVessel.transform.position;
+            Vector3 currentpos;
+            
+            currentpos.x = Mathf.Lerp(this.transform.position.x, manager.currentVessel.transform.position.x, lerp);
+            currentpos.y = Mathf.Lerp(this.transform.position.y, manager.currentVessel.transform.position.y, lerp);
+            currentpos.z = 0;
+            transform.position = currentpos;
+
+            float distance;
+
+            distance = Vector2.Distance(currentpos, manager.currentVessel.transform.position);
+            if (isTransfering)
+            {
+                if (distance < 0.05f)
+                {
+                    Debug.Log("huzzah betch");
+
+
+                    this.GetComponentInChildren<TrailRenderer>().enabled = false;
+                    isTransfering = false;
+                    manager.CompletePossess();
+                    //also do the other half of the possess
+
+                }
+                else
+                {
+                    this.GetComponentInChildren<TrailRenderer>().enabled = true;
+                }
+            }
+
+
         }
         else if (isVessel)
         {
