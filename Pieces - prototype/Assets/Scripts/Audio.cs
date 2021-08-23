@@ -8,7 +8,7 @@ public class Audio : MonoBehaviour
     // however, there was an issue as multiple audio gameobjects could be created and played at once - if you return to the menu
     // a solution to this issue was provided by https://www.youtube.com/watch?v=PHa5SNe1Mmk&t
 
-    public static Audio song1;
+    public static Audio song;
     
    
 
@@ -25,7 +25,9 @@ public class Audio : MonoBehaviour
 
 
 
-        if (song1 != null)
+        this.GetComponent<AudioSource>().Play();
+
+        if (song != null)
         {
             //if there is indeed a version of song1 in the scene
             Destroy(gameObject);
@@ -34,14 +36,10 @@ public class Audio : MonoBehaviour
         else
         {
             //there is no other instance
-            song1 = this;
+            song = this;
             DontDestroyOnLoad(transform.gameObject);
 
-
-
-
         }
-
 
     }
 
