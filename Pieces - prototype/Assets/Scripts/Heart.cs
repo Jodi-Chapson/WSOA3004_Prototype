@@ -29,4 +29,21 @@ public class Heart : MonoBehaviour
 
         endscreen.SetActive(true);
     }
+
+
+    public void OnMouseDown()
+    {
+        if (manager.currentVessel != null)
+        {
+            //means the player is current possessing something.
+            manager.Depossess();
+
+
+           
+
+        }
+
+
+        manager.Teleport(manager.level);
+    }
 }

@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public Transform ghost;
     public GameObject currentVessel;
     public Cam2DFollow cam;
+    public Transform spawntwo, spawnthree, spawnfour;
+    public int level = 1;
 
     public void Start()
     {
@@ -93,6 +95,34 @@ public class GameManager : MonoBehaviour
         currentVessel.GetComponent<PlayerController>().isCurrentVessel = false;
         Destroy(currentVessel.gameObject);
         currentVessel = null;
+    }
+
+    public void Teleport(int levelint)
+    {
+        if (levelint == 1)
+        {
+            ghost.transform.position = spawntwo.position;
+            cam.transform.position = spawntwo.position;
+            level++;
+        }
+        else if (levelint == 2)
+        {
+            ghost.transform.position = spawnthree.position;
+            cam.transform.position = spawnthree.position;
+            level++;
+        }
+        else if (levelint == 3)
+        {
+            ghost.transform.position = spawnfour.position;
+            cam.transform.position = spawnfour.position;
+            level++;
+        }
+        else if (levelint == 4)
+        {
+            //end
+        }
+
+
     }
 
 }
