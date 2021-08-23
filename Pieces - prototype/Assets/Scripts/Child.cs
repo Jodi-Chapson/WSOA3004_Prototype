@@ -72,6 +72,7 @@ public class Child : MonoBehaviour
 
                 manager.Dialogue(dialogue, 0);
                 manager.isEnd = true;
+                
 
 
 

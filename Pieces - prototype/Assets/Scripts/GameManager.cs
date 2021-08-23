@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
                     if (isEnd)
                     {
                         endscreen.SetActive(true);
+                        this.GetComponent<CursorChange>().ChangeTexture();
                     }
                 }
             }
