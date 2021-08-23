@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject ghost;
+    public Transform ghost;
     public GameObject currentVessel;
-    public CamController cam;
+    public Cam2DFollow cam;
 
     public void Start()
     {
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
             //switches on the host
             currentVessel = host;
-            cam.target = host;
+            cam.target = host.transform;
             host.GetComponent<PlayerController>().isCurrentVessel = true;
             host.GetComponent<PlayerController>().isActive = true;
             host.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
