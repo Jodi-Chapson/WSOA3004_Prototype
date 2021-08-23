@@ -6,6 +6,7 @@ public class Heart : MonoBehaviour
 {
     public GameManager manager;
     public GameObject memorytext, endscreen;
+    public int nextlevel;
 
     public void Start()
     {
@@ -23,12 +24,7 @@ public class Heart : MonoBehaviour
         //}
     }
 
-    public IEnumerator End()
-    {
-        yield return new WaitForSeconds(3f);
-
-        endscreen.SetActive(true);
-    }
+    
 
 
     public void OnMouseDown()
@@ -38,12 +34,14 @@ public class Heart : MonoBehaviour
             //means the player is current possessing something.
             manager.Depossess();
 
-
+            
            
 
         }
 
+        manager.GetComponent<SceneChanger>().Scenechanger(nextlevel);
 
-        manager.Teleport(manager.level);
+
+        //manager.Teleport(manager.level);
     }
 }

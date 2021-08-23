@@ -7,13 +7,17 @@ public class GameManager : MonoBehaviour
     public Transform ghost;
     public GameObject currentVessel;
     public Cam2DFollow cam;
-    public Transform spawntwo, spawnthree, spawnfour;
-    public int level = 1;
+    public int currentlevel;
+    
+    
 
     public void Start()
     {
         cam.target = ghost;
     }
+
+    
+
     public void Update()
     {
         
@@ -26,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown("r"))
         {
-            this.GetComponent<SceneChanger>().Scenechanger(1);
+            this.GetComponent<SceneChanger>().Scenechanger(currentlevel);
         }
 
 
@@ -112,32 +116,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Teleport(int levelint)
-    {
-        if (levelint == 1)
-        {
-            ghost.transform.position = spawntwo.position;
-            cam.transform.position = spawntwo.position;
-            level++;
-        }
-        else if (levelint == 2)
-        {
-            ghost.transform.position = spawnthree.position;
-            cam.transform.position = spawnthree.position;
-            level++;
-        }
-        else if (levelint == 3)
-        {
-            ghost.transform.position = spawnfour.position;
-            cam.transform.position = spawnfour.position;
-            level++;
-        }
-        else if (levelint == 4)
-        {
-            //end
-        }
-
-
-    }
+    
 
 }

@@ -15,8 +15,9 @@ public class Hand_Basic : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("end");
-            scenechange.Scenechanger(1);
+
+            scenechange.Scenechanger(scenechange.GetComponent<GameManager>().currentlevel);
+            
         }
     }
 }

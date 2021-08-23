@@ -13,13 +13,15 @@ public class PlayerController : MonoBehaviour
     public GameObject outline1, outline2, outline3, outline4;
     public ParticleSystem orbs, deathvfx;
     public Sprite deadsprite;
+    
 
     [Header("Player Configurations")]
     public bool isVessel;
     public CreatureType type;
     public bool hasIdle;
-    [Header("States")]
     
+
+    [Header("States")]
     public bool isCurrentVessel;
     public bool isActive;
     public bool isPossessing;
@@ -374,5 +376,17 @@ public class PlayerController : MonoBehaviour
             
             
         }
+    }
+
+    public void Reset()
+    {
+        isDead = false;
+        isActive = false;
+        isCurrentVessel = false;
+
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<Animator>().SetBool("isMoving", false);
+        this.GetComponent<Animator>().SetBool("isPossessed", true);
+
     }
 }
