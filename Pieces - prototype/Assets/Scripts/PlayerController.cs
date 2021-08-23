@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject sprite;
     public GameManager manager;
+    public GameObject outline1, outline2, outline3, outline4;
 
     [Header("Player Configurations")]
     public bool isVessel;
@@ -255,6 +256,46 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnMouseOver()
+    {
+        if (isVessel)
+        {
+            float distance = Vector2.Distance(manager.GetComponent<GameManager>().ghost.transform.position, this.transform.position);
+            if (distance < 5)
+            {
+
+                if (type == CreatureType.CROW)
+                {
+                    outline1.GetComponent<SpriteRenderer>().enabled = true;
+                    outline2.GetComponent<SpriteRenderer>().enabled = true;
+                    outline3.GetComponent<SpriteRenderer>().enabled = true;
+                    outline4.GetComponent<SpriteRenderer>().enabled = true;
+                }
+                else
+                {
+                    outline1.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void OnMouseExit()
+    {
+        if (isVessel)
+        {
+            if (type == CreatureType.CROW)
+            {
+                outline1.GetComponent<SpriteRenderer>().enabled = false;
+                outline2.GetComponent<SpriteRenderer>().enabled = false;
+                outline3.GetComponent<SpriteRenderer>().enabled = false;
+                outline4.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            else
+            {
+                outline1.SetActive(false);
+            }
+        }
+    }
 
     public void OnMouseDown()
     {
