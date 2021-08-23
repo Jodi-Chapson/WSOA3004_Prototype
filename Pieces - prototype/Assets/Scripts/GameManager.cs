@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         ghost.GetComponent<PlayerController>().GetComponentInChildren<SpriteRenderer>().enabled =false;
         currentVessel.GetComponent<PlayerController>().isActive = true;
         currentVessel.GetComponentInChildren<Animator>().SetBool("isPossessed", true);
-        currentVessel.GetComponentInChildren<ParticleSystem>().Play();
+        currentVessel.GetComponent<PlayerController>().orbs.Play();
 
     }
 
