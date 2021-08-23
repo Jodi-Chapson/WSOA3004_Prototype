@@ -70,6 +70,8 @@ public class Grave : MonoBehaviour
                 outline.SetActive(false);
                 canClick = false;
 
+                manager.Dialogue(dialogue, 0);
+
 
 
             }

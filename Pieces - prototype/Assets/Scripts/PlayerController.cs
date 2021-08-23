@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool isTransfering;
     public bool isGrounded;
     public bool isDead;
+    public bool isFrozen;
 
     [Header("Variables")]
     
@@ -237,6 +238,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
             
+        }
+
+
+        if (isFrozen)
+        {
+            rb.velocity = Vector2.zero;
         }
         
     }

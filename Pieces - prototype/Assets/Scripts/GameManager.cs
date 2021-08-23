@@ -4,22 +4,78 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    [Header("References")]
     public Transform ghost;
     public GameObject currentVessel;
+    public GameObject currentdialogue;
     public Cam2DFollow cam;
     public int currentlevel;
-    
+    public bool dialogueopen;
+    public bool isMemory;
+    public int mouseclick = 0;
     
 
     public void Start()
     {
         cam.target = ghost;
+        currentVessel = null;
+        dialogueopen = false;
     }
 
 
-    public void Dialogue()
-
+    public void Dialogue(GameObject targetdialogue, int type)
     {
+        currentdialogue = targetdialogue.gameObject;
+        
+
+        if (currentVessel != null)
+        {
+            currentVessel.GetComponent<PlayerController>().isActive = false;
+            currentVessel.GetComponent<PlayerController>().isFrozen = true;
+
+            
+
+        }
+        else
+        {
+            
+            //in ghost form
+            ghost.GetComponent<PlayerController>().isActive = false;
+            ghost.GetComponent<PlayerController>().isFrozen = true;
+            
+
+        }
+
+        mouseclick = type;
+
+        currentdialogue.SetActive(true);
+        dialogueopen = true;
+
+
+    }
+
+    public void Memory(GameObject targetdialogue, int type)
+    {
+
+        currentdialogue = targetdialogue.gameObject;
+
+
+        Depossess();
+        
+
+            
+            ghost.GetComponent<PlayerController>().isActive = false;
+            ghost.GetComponent<PlayerController>().isFrozen = true;
+
+
+
+        mouseclick = type;
+        currentdialogue.SetActive(true);
+        dialogueopen = true;
+        isMemory = true;
+
+
 
     }
 
@@ -38,6 +94,41 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("r"))
         {
             this.GetComponent<SceneChanger>().Scenechanger(currentlevel);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (dialogueopen)
+            {
+                mouseclick++;
+
+                if (mouseclick == 2)
+                {
+                    //so there is a dialogue open
+                    currentdialogue.SetActive(false);
+                    currentdialogue = null;
+
+                    if (currentVessel != null)
+                    {
+                        currentVessel.GetComponent<PlayerController>().isActive = true;
+                        currentVessel.GetComponent<PlayerController>().isFrozen = false;
+                    }
+                    else
+                    {
+
+                        ghost.GetComponent<PlayerController>().isActive = true;
+                        ghost.GetComponent<PlayerController>().isFrozen = false;
+                    }
+
+                    dialogueopen = false;
+                    mouseclick = 0;
+
+                    if (isMemory)
+                    {
+                        this.GetComponent<SceneChanger>().Scenechanger(currentlevel + 1);
+                    }
+                }
+            }
         }
 
 
